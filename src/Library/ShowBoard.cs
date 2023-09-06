@@ -8,7 +8,7 @@ namespace Library
     {
 
 
-        public static Board DisplayBoard(Board board)
+        public static void DisplayBoard(Board board) // Imprime el tablero ingresado
         {
             bool[,] b = board.gameBoard; // variable que representa el tablero
             int width = b.GetLength(0); // variable que representa el ancho del tablero
@@ -31,9 +31,6 @@ namespace Library
                 s.Append("\n");
             }
             Console.WriteLine(s.ToString());
-            board=GameLogic.BoardConReglas(board);
-            Thread.Sleep(300);
-            return board;
         }
     }
 }

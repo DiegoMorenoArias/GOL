@@ -5,7 +5,8 @@ namespace Library
 
     public class GameLogic
         {
-            public static Board BoardConReglas(Board board)
+            public static Board BoardConReglas(Board board) // Al tablero ingresado se le aplican las reglas del juego y se devuelve el 
+            // objeto Board con las reglas ya aplicadas, es decir la siguiente generación.
             {
                 bool[,] currentBoard = board.gameBoard;
                 int boardWidth = currentBoard.GetLength(0);

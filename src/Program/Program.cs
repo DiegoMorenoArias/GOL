@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Library;
 namespace Ucu.Poo.GameOfLife
 {
@@ -6,10 +7,13 @@ namespace Ucu.Poo.GameOfLife
     {
         static void Main(string[] args)
         {
-            Board board1 = ReadBoard.LeerBoard();
-            while (true)
+            Board board1 = ReadBoard.LeerBoard(); // Lee el tablero, ésta será la primera generación.
+            while (true) // Luego se mantiene en un loop infinito que va de ShowBoard a GameLogic constantemente pasando de generación en
+            //generación de forma constante.
             {
-                board1=ShowBoard.DisplayBoard(board1);
+                ShowBoard.DisplayBoard(board1);
+                board1=GameLogic.BoardConReglas(board1);
+                Thread.Sleep(100);
             }
 
         }

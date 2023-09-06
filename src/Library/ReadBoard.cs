@@ -5,9 +5,10 @@ namespace Library
 {
     public class ReadBoard
     {
-        public static Board LeerBoard()
+        public static Board LeerBoard() // Lee el tablero por primera vez
         {
-            string url = @".\..\..\assets\board.txt";
+            string url = @".\..\..\assets\board.txt"; // Puede probarse cambiando por board2, board3 y board4 que utilicé una secuencia distinta
+            //para probar distintas animaciones
             string content = File.ReadAllText(url);
             string[] contentLines = content.Split('\n');
             bool[,] board = new bool[contentLines.Length, contentLines[0].Length];
